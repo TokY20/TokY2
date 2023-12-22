@@ -1,0 +1,22 @@
+authorization
+
+python3 ./dirsearch.py -u url -w db/dicc.txt
+
+check url/auth
+change GET to POST
+check username and password-  url/client_secrets.json
+now we need token
+
+make:
+
+burp request
+{
+  "username"="admin",
+  "password"="admin"
+}
+
+get token
+
+burp request
+Authorization: JWT
+token
