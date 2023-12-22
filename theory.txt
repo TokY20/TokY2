@@ -1,0 +1,38 @@
+SQL injection (SQLi) is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It generally allows an attacker to view data that they are not normally able to retrieve.
+
+
+There are a wide variety of SQL injection vulnerabilities, attacks, and techniques, which arise in different situations. Some common SQL injection examples include:
+Retrieving hidden data, where you can modify an SQL query to return additional results.
+
+Subverting application logic, where you can change a query to interfere with the application's logic.
+
+UNION attacks, where you can retrieve data from different database tables.
+
+Examining the database, where you can extract information about the version and structure of the database.
+
+Blind SQL injection, where the results of a query you control are not return
+
+
+In Python, the pickle module lets you serialize and deserialize data. 
+
+
+Essentially, this means that you can convert a Python object into a stream of bytes and then reconstruct it (including the object’s internal structure) later in a different process or environment by loading that stream of bytes.n-pickle/
+
+
+
+DirBuster is often thought of as the de facto brute-force scanner, but it is written in Java and only offers a GUI, which can make it sort of clunky. 
+
+
+Dirsearch is command-line only, and having been written in Python makes it easier to integrate into scripts and other existing projects. 
+
+
+DIRB is another popular directory scanner, but it lacks multithreading, making dirsearch the clear winner when it comes to speed.
+
+
+Gobuster - The main advantage Gobuster has over other directory scanners is speed. 
+
+
+
+Server-side template injection is when an attacker is able to use native template syntax to inject a malicious payload into a template, which is then executed server-side.
+
+
