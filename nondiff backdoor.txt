@@ -6,6 +6,8 @@ find /backup.zip
 
 wger url//backup.zip
 
+unzip in new folder
+
 in backup:
 grep -r "shell_exec("
 
